@@ -54,12 +54,16 @@ The `handwriting_recognition.ipynb` notebook covers the following key steps:
 
 1.  **Setup Environment:**
     *   Ensure you have Python installed.
-    *   Install PyTorch and Torchvision: Follow instructions on the [official PyTorch website](https://pytorch.org/).
-    *   Install other necessary libraries:
+    *   Install PyTorch and Torchvision: It's often best to follow instructions on the [official PyTorch website](https://pytorch.org/) for your specific OS and CUDA version requirements.
+    *   Install all other project dependencies (including JupyterLab, Gradio, OpenCV, etc.) by running the following command from the root directory of this project (where the `pyproject.toml` file is located):
         ```bash
-        pip install matplotlib pillow opencv-python numpy jupyterlab albumentations
+        pip install .
         ```
-        (If you have a `requirements.txt` file, you can often use `pip install -r requirements.txt`)
+        This command reads the `pyproject.toml` file and installs all listed dependencies. If you are in a development environment and might modify the project code, you can install it in editable mode:
+        ```bash
+        pip install -e .
+        ```
+    *   **Note on PyTorch with specific hardware:** If `pip install .` does not install a version of PyTorch compatible with your GPU (e.g., if you need a specific CUDA version), install PyTorch and Torchvision separately first using the official PyTorch website's instructions, and then run `pip install .` to get the remaining dependencies.
 
 2.  **Dataset:**
     *   Download or prepare your handwritten character dataset.
