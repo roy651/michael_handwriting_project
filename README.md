@@ -82,3 +82,33 @@ The `handwriting_recognition.ipynb` notebook covers the following key steps:
 The notebook is structured to allow you to train different models and observe their performance. By running the training cells, you'll see how the training and validation loss/accuracy change over epochs. The test accuracy will give you a final measure of how well the model generalizes to unseen data. You can then compare the custom CNN approaches with the VGG19 transfer learning approach. The inference section allows for practical application of your trained models.
 
 Happy character recognizing!
+
+## Interactive Demos (Gradio)
+
+The Jupyter Notebook (`handwriting_recognition.ipynb`) now includes interactive demos powered by Gradio, allowing you to easily test the trained models.
+
+To use the demos:
+1.  Ensure you have Gradio installed. If not, a cell in the notebook will attempt to install it for you (`!pip install gradio -q`).
+2.  Run the cells in the notebook up to and including the Gradio demo cells at the end.
+3.  The demos will launch directly within the notebook output.
+
+There are two demos available in a tabbed interface:
+
+### 1. Single Character Recognition
+*   **Input:**
+    *   Draw a single character directly on a sketchpad.
+    *   *(Alternative, can be enabled in Gradio code)* Upload an image of a single character.
+    *   Select which trained model to use (`ImprovedCNN` or `VGG19`).
+*   **Output:**
+    *   The model's predicted character.
+    *   The confidence score of the prediction.
+
+### 2. Multiple Character Recognition (Word/Sentence)
+*   **Input:**
+    *   Upload an image containing multiple handwritten characters (e.g., a word or a short sentence). It's recommended to use images with black text on a relatively clean white background for best segmentation results.
+    *   Select which trained model to use.
+*   **Output:**
+    *   The original image with bounding boxes drawn around the characters detected by the segmentation algorithm.
+    *   The recognized text, showing each character identified by the model along with its individual confidence score.
+
+**Note on Models for Demos:** The demos rely on the model checkpoints saved during the training experiments (e.g., in `model_checkpoints_cnn/best_model.pth`). Ensure you have run the training cells in the notebook to generate these files before launching the Gradio demos.
