@@ -11,10 +11,9 @@ authors = [
 ]
 readme = "README.md"
 requires-python = ">=3.8"
-license = {text = "MIT License"}
+license = "MIT"
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
     "Topic :: Scientific/Engineering :: Image Recognition",
@@ -32,6 +31,7 @@ dependencies = [
     "scikit-learn" # Added for potential utility, though not explicitly in original scripts, it's very common. If not needed, can be removed.
     # IPython is usually a dependency of jupyterlab, but explicit can be added if needed.
 ]
+py_modules = []
 
 [project.urls]
 "Homepage" = "https://github.com/example/repository" # Placeholder
