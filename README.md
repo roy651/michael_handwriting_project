@@ -46,8 +46,8 @@ The project is organized into the following components:
 ### 4.1. Clone the Repository
 
 ```bash
-git clone <repository_url>
-cd <repository_directory>
+git clone https://github.com/roy651/michael_handwriting_project.git
+cd michael_handwriting_project
 ```
 
 ### 4.2. Create a Virtual Environment
